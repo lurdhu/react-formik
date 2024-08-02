@@ -120,7 +120,7 @@ console.log("data",data)
                                             <div className='text-red-600'>{errors.phonenumber}</div>
                                         ) : null}
                                     </div>
-                                    <button className='bg-blue-400 text-white p-1 rounded-sm px-3 mt-4' type='submit' disabled={!isValid}> {isEdit ? "Update" :"Submit"}</button>
+                                    <button className='bg-blue-400 text-white p-1 rounded-sm px-3 mt-4' type='submit' > {isEdit ? "Update" :"Submit"}</button>
                                 </Form>
                             )
                         }
@@ -145,7 +145,7 @@ console.log("data",data)
                                 <tr className='border border-gray-200'>
                                     <td className='border border-gray-200 p-2'>{item.name}</td>
                                     <td className='border border-gray-200 p-2'>{item.email}</td>
-                                    <td className='border border-gray-200 p-2'>{item.hobbies}</td>
+                                    <td className='border border-gray-200 p-2'>{item.hobbies.map((hobby)=>{return(<p>{hobby}</p>)})}</td>
                                     <td className='border border-gray-200 p-2'>{item.gender}</td>
                                     <td className='border border-gray-200 p-2'>{item.phonenumber}</td>
                                     <td className='border border-gray-200 p-2'><button onClick={()=>handleedit(index)} className='bg-blue-500 p-1 text-white rounded-sm px-3'>edit</button></td>
