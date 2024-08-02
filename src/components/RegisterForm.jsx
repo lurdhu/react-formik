@@ -129,21 +129,34 @@ console.log("data",data)
                 </Formik>
 
                 <div>
+                    <table className='border border-gray-200 mt-10 mx-auto p-2'>
+                        <thead>
+                            <th className='border border-gray-200 p-2'>Name</th>
+                            <th className='border border-gray-200 p-2'>Email</th>
+                            <th className='border border-gray-200 p-2'>Hobbies</th>
+                            <th className='border border-gray-200 p-2'>Gender</th>
+                            <th className='border border-gray-200 p-2'>Phonenumber</th>
+                            <th className='border border-gray-200 p-2'>Action</th>
+                        </thead>
+                        <tbody>
                     {
                         data.map((item,index)=>{
                             return (
-                                <div>
-                                    <p>{item.name}</p>
-                                    <p>{item.email}</p>
-                                    <p>{item.hobbies}</p>
-                                    <p>{item.gender}</p>
-                                    <p>{item.phonenumber}</p>
-                                    <button onClick={()=>handleedit(index)}>edit</button>
-                                </div>
+                                <tr className='border border-gray-200'>
+                                    <td className='border border-gray-200 p-2'>{item.name}</td>
+                                    <td className='border border-gray-200 p-2'>{item.email}</td>
+                                    <td className='border border-gray-200 p-2'>{item.hobbies}</td>
+                                    <td className='border border-gray-200 p-2'>{item.gender}</td>
+                                    <td className='border border-gray-200 p-2'>{item.phonenumber}</td>
+                                    <td className='border border-gray-200 p-2'><button onClick={()=>handleedit(index)} className='bg-blue-500 p-1 text-white rounded-sm px-3'>edit</button></td>
+                                    
+                                </tr>
                             )
                             
                         })
                     }
+                    </tbody>
+                    </table>
                 </div>
             </div>
         </>
